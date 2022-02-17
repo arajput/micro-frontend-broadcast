@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <h1>Attendance App</h1>
-      <Attendance name="C-II"></Attendance>
+      <Attendance classData={{name:"C-II", total:50 }}></Attendance>
     </div>
   );
 }

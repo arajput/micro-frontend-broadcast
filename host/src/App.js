@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 // const Attendance = React.lazy(() => import('AttendanceApp/Attendance'));
-// const MyClasses = React.lazy(() => import('ClassesApp/MyClasses'));
+const MyClasses = React.lazy(() => import('ClassesApp/MyClasses'));
 const FossologyRemote = React.lazy(() => import("fossology/App"));
 
 function App() {
@@ -10,11 +10,17 @@ function App() {
 
   return (
     <div>
-      <h1>From HOST</h1>
+      <h1>From HOST:FossologyRemote</h1>
       <React.Suspense fallback="Loading Button">
         {/* <MyClasses name="C123456"/> */}
 
         <FossologyRemote />
+      </React.Suspense>
+
+      <h1>From HOST:MyClasses</h1>
+      <React.Suspense fallback="Loading Button">
+
+        <MyClasses name="C123456"/>
       </React.Suspense>
     </div>
   );
