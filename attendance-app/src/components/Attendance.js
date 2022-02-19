@@ -34,11 +34,11 @@ export const  Attendance = ({classData, name})=>{
             {editing?(
             <div>
                 <label>How many student preset out of <b>{classData.total}</b></label>
-                <input onChange={onChange} type={"number"} max={classData.total}></input>
-                <button onClick={onAttendanceClick}>Save</button>
-                <button onClick={onEditCancelClick}>Cancel</button>
+                <input className="form-control mx-2 mb-3"onChange={onChange} type={"number"} max={classData.total}></input>
+                <button className="btn btn-success mx-2" onClick={onAttendanceClick}>Save</button>
+                <button className="btn btn-danger" onClick={onEditCancelClick}>Cancel</button>
             </div>):(
-                <button onClick={onEditClick}>Mark Attendace:{classData.name} </button>
+                <button className="btn btn-primary" onClick={onEditClick}>Mark Attendace:{classData.name} </button>
             )}
         </>
     );

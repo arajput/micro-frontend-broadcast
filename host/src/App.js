@@ -10,18 +10,20 @@ function App() {
 
   return (
     <div>
-      <h1>From HOST:FossologyRemote</h1>
+      <h2  className="mb-3">From HOST:MyClasses</h2>
+      <React.Suspense fallback="Loading Button">
+
+        <MyClasses name="C123456"/>
+      </React.Suspense>
+
+      <h2 className="mb-3">From HOST:FossologyRemote</h2>
       <React.Suspense fallback="Loading Button">
         {/* <MyClasses name="C123456"/> */}
 
         <FossologyRemote />
       </React.Suspense>
 
-      <h1>From HOST:MyClasses</h1>
-      <React.Suspense fallback="Loading Button">
-
-        <MyClasses name="C123456"/>
-      </React.Suspense>
+      
     </div>
   );
 }
