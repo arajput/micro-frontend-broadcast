@@ -22,5 +22,9 @@ module.exports = {
       singleton: true,
       requiredVersion: dependencies["react-dom"],
     },
+    postal: {
+      singleton: true,
+      requiredVersion: dependencies["react"],
+    },
   },
 };

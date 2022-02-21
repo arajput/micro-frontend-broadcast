@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import postal from 'postal';
 
 
 export const  Attendance = ({classData, name})=>{
     const bc = new BroadcastChannel('app_channel');
+    const appEventsChannel = postal.channel("app_events");
+
+
     const [editing, setEditing] = useState(false);
     const [present, setPresent] = useState(0);
 
@@ -19,6 +23,7 @@ export const  Attendance = ({classData, name})=>{
             }
         };
         bc.postMessage(message);
+        appEventsChannel.publish('ATTENDANCE', message)
     }
     const onEditClick = ()=>{
         setEditing(true);
